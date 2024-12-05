@@ -11,7 +11,7 @@ $CFG->dbuser    = 'moodleuser';
 $CFG->dbpass    = 'MoodlePass@123';
 $CFG->prefix    = 'mdl_';
 
-$CFG->wwwroot   = 'http://localhost';
+$CFG->wwwroot   = 'http://10.40.0.71';
 $CFG->dataroot  = '/var/www/moodledata';
 $CFG->admin     = 'admin';
 
