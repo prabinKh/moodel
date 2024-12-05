@@ -2,7 +2,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "10.40.0.71:80:80"
+      - "10.10.0.83:80:80"
     volumes:
       - ./moodle:/var/www/html:rw
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
@@ -13,6 +13,7 @@ services:
       db:
         condition: service_healthy
     restart: unless-stopped
+    user: "www-data:www-data"
 
   php:
     build: .
@@ -25,7 +26,7 @@ services:
       - POST_MAX_SIZE=64M
       - MAX_EXECUTION_TIME=300
       - PHP_MAX_INPUT_VARS=5000
-    user: "1000:1000"
+    user: "www-data:www-data"
     restart: unless-stopped
 
   db:
